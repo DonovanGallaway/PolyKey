@@ -61,8 +61,10 @@
                 styleMap.text = 'black'
                 break;
             case 6:
+                styleMap.color = 'rgb(255, 150, 51)'
+                break;
             case 7:
-                styleMap.color = 'rgb(100,100,100)'
+                styleMap.color = 'rgb(51,150,255)'
                 styleMap.text = 'black'
                 break;
             case 8:
@@ -95,8 +97,10 @@
                 styleMap.color = 'rgb(255, 100, 255)'
                 break;
             case 6:
+                styleMap.color = 'rgb(200, 80, 30)'
+                break;
             case 7:
-                styleMap.color = 'rgb(100,100,100)'
+                styleMap.color = 'rgb(30,80,200)'
                 styleMap.text = 'black'
                 break;
             case 8:
@@ -212,4 +216,4 @@
     }
 </style>
 
-<button style="background: {getStyle().color}; color: {getStyle().text}" on:click={playNote}>F: {frequency} H: {harmonic}</button>
+<button style="background: {getStyle().color}; color: {getStyle().text}" on:click={playNote}>F: {frequency}</button>
