@@ -44,15 +44,24 @@
                 styleMap.text = 'black'
                 break;
             case 3:
+                styleMap.color = 'rgb(200,255,255)'
+                styleMap.text = 'black'
+                break;
             case 4:
                 styleMap.color = 'rgb(150,150,150)'
                 styleMap.text = 'black'
                 break;
             case 5:
+                styleMap.color = 'rgb(125,255,125)'
+                styleMap.text = 'black'
+                break;
             case 6:
             case 7:
-            case 8:
                 styleMap.color = 'rgb(100,100,100)'
+                styleMap.text = 'black'
+                break;
+            case 8:
+                styleMap.color = 'rgb(255,200,200)'
                 styleMap.text = 'black'
                 break;
             default:
@@ -71,6 +80,9 @@
                 styleMap.text = 'black'
                 break;
             case 3:
+                styleMap.color = 'rgb(255,200,200)'
+                styleMap.text = 'black'
+                break;
             case 4:
                 styleMap.color = 'rgb(75,200,75)'
                 styleMap.text = 'black'
@@ -80,6 +92,33 @@
             case 7:
             case 8:
                 styleMap.color = 'rgb(100,100,100)'
+                styleMap.text = 'black'
+                break;
+            default:
+                styleMap.color = 'rgb(25,25,25)'
+                styleMap.text = 'white'
+                break;
+        }} else if(hFunc === 'subdominant'){
+            switch(harmonic){
+            case 0:
+            case 1:
+                styleMap.color = 'rgb(200,255,255)'
+                styleMap.text = 'black'
+                break;
+            case 2:
+                styleMap.color = 'rgb(255,200,200)'
+                styleMap.text = 'black'
+                break;
+            case 3:
+            case 4:
+                styleMap.color = 'rgb(0,0,150)'
+                styleMap.text = 'black'
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                styleMap.color = 'rgb(0,0,50)'
                 styleMap.text = 'black'
                 break;
             default:

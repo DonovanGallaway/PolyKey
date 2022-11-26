@@ -51,13 +51,17 @@
 
 </style>
 
-<h1>This is Keyboard</h1>
+<h1>PolyKey</h1>
 
 <h2>Fundamental</h2>
 {#each noteMap(fundFreq) as noteProps}
     <Key props={noteProps}/>
 {/each}
-<h3>Dominant</h3>
+<h2>Subdominant</h2>
+{#each noteMap(fundFreq*1.25) as noteProps}
+    <Key props={noteProps} hFunc={'subdominant'}/>
+{/each}
+<h2>Dominant</h2>
 {#each noteMap(fundFreq*1.5) as noteProps}
     <Key props={noteProps} hFunc={'dominant'}/>
 {/each}
