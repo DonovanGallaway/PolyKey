@@ -9,12 +9,15 @@
 
     let context, o, g;
 
+    context = new AudioContext()
+
     const generateSound = () =>{
-        context = new AudioContext();
+        //context = new AudioContext();
         o = context.createOscillator();
         g = context.createGain();
         o.type = type;
         o.frequency.value = frequency;
+        
         o.connect(g);
         g.connect(context.destination);
     }
@@ -22,10 +25,13 @@
     generateSound()
 
     const playNote = () => {
+        console.log('hello')
         o.start(0);
+        o.stop(context.currentTime + 1)
         g.gain.exponentialRampToValueAtTime(
             0.0001, context.currentTime + decay
         )
+        
         generateSound();
     }
 
