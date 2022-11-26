@@ -12,7 +12,6 @@
     context = new AudioContext()
 
     const generateSound = () =>{
-        //context = new AudioContext();
         o = context.createOscillator();
         g = context.createGain();
         o.type = type;
@@ -25,7 +24,6 @@
     generateSound()
 
     const playNote = () => {
-        console.log('hello')
         o.start(0);
         o.stop(context.currentTime + 1)
         g.gain.exponentialRampToValueAtTime(
