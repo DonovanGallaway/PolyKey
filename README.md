@@ -30,7 +30,7 @@ There is an interesting fact which is causing me to pause and add something on t
 ## Housekeeping Notes
 For me or anyone who wants to help with bugfixes/optimization
 
-- AudioContext object sometimes drops, including in dev on any page changes (probably unavoidable) but also randomly if too many clicks
+- Activating a note repeatedly and quickly causes a sharp noise to occur
 - Adding keybindings to stuff to play the keyboard more like a piano
 - Moving that godawful styling case/elseif nightmare to some more readable separate helper function(s)
 - Chord functionality
