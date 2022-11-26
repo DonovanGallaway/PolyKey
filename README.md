@@ -1,47 +1,28 @@
-# Svelte + Vite
+# PolyKey
+Eventually this will have more stuff. For now it's just my notes.
 
-This template should help get you started developing with Svelte in Vite.
+## The Background
+The core concept is to build a more natural scale based directly on the harmonic series. I remember in high school my friends and I talked a lot about the harmonic series, about overtones, about the stagnation of Western tonality. Schoenbergs interpretations of harmony in particular were interesting, but you couldn't make it sound good.
 
-## Recommended IDE Setup
+What's funny is that even mid-late Romantic era textbooks, as well as all of these modern interpretations, start with the notion of the harmonic series. That a note, doubled in frequency, with it's pseudo-squares as octaves and its other doublings as harmonic series notes, are the basis for what we find sonically pleasing. A simple enough notion, challenged frequently by cultural standards. But an outright LIE that it is the basis of Western tonality.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+I haven't been able to track down exactly where it got dropped or why nobody seemed to make this a bigger deal. My assumptions are 1) our Western harmony has its roots in church modes, where twelve and seven are sacred numbers 2) correcting this injustice to make anything but really boring music required some VERY precise tuning.
 
-## Need an official Svelte framework?
+I've had this idea rattling around for some years now and just now really have the combination of musical know-how, coding experience, free time and inspiration necessary to make it a reality. I hope you find it as interesting as I do.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## The Gist
+As above, the idea is that you take, for a given fundamental frequency, an overtone series of that fundamental. From there, you select your number of notes required (some power of 2). To keep in concept with Western Harmony and have access to similar tones, I  have selected 8 notes in the scale (nine with the "octave"). (Fuck I'm going to have to rename that)
 
-## Technical considerations
+From there, I have additionally built out harmonic series based on the notes in that harmonic series. This gives you your chromatic tones. Even though they don't go on proper chromatic scales, you can very freely modulate and create some very interesting harmonic aspects.
 
-**Why use this over SvelteKit?**
+## Possible Performance Notes
+Obviously this is very early days. I coded this up in a few hours. There is little thought to user experience or playability, especially if we start talking about physical instruments (which I once considered potentially unfeasible). This will be tweaked as I go, but for now I will likely just implement a basic keyboard UI.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+The colors are similarly selected for ease of spotting relevant notes, but not necessarily final nor optimal. Really it's just to give me something to stop the walls from spinning in trying to see what matches in what harmonic series.
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## Heavy Theory Notes
+This is mostly just stuff I find interesting.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+Application is currently broken down to the tonic, as well as Dominant, Sub/Supertonic, and Lower/Upper Mediant scale functions. I thought about breaking it further and overtoning out the last two of the tonic (what would be the subdominant and superdominant scales), but they don't appear to have any overlap in either direction with any of the other scale functions. As such, I cannot conceive of their use in this early stage of development.
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+There is an interesting fact which is causing me to pause and add something on this, namely that the Subtonic appears to be pretty tonally useful in scale-building and arpeggios. Since it falls at eigth in the tonic harmonic set, I assumed that it would be of little use (like the sub/superdominant scales). However, it has a great deal of overlap with the dominant as well as mediant scales, and so is more immediately useful in my eyes for modulation.

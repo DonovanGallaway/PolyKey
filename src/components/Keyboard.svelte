@@ -53,15 +53,27 @@
 
 <h1>PolyKey</h1>
 
-<h2>Fundamental</h2>
+<h2>Tonic</h2>
 {#each noteMap(fundFreq) as noteProps}
     <Key props={noteProps}/>
-{/each}
-<h2>Subdominant</h2>
-{#each noteMap(fundFreq*1.25) as noteProps}
-    <Key props={noteProps} hFunc={'subdominant'}/>
 {/each}
 <h2>Dominant</h2>
 {#each noteMap(fundFreq*1.5) as noteProps}
     <Key props={noteProps} hFunc={'dominant'}/>
+{/each}
+<h2>Supertonic</h2>
+{#each noteMap(fundFreq*1.125) as noteProps}
+    <Key props={noteProps} hFunc={'supertonic'}/>
+{/each}
+<h2>Lower Mediant</h2>
+{#each noteMap(fundFreq*1.25) as noteProps}
+    <Key props={noteProps} hFunc={'lmediant'}/>
+{/each}
+<h2>Upper Mediant</h2>
+{#each noteMap(fundFreq*1.75) as noteProps}
+    <Key props={noteProps} hFunc={'umediant'}/>
+{/each}
+<h2>Subtonic</h2>
+{#each noteMap(fundFreq*1.875) as noteProps}
+    <Key props={noteProps} hFunc={'subtonic'}/>
 {/each}
