@@ -1,36 +1,19 @@
 <script>
 // @ts-nocheck
-
+    import * as Tone from 'tone'
 
     export let props
     export let hFunc = 'tonic'
 
-    const {type, frequency, decay, fundamental, harmonic} = props
+    const { frequency, harmonic } = props
 
-    let context, o, g;
+    const synth = new Tone.Synth().toDestination();
 
-    context = new AudioContext()
-
-    const generateSound = () =>{
-        o = context.createOscillator();
-        g = context.createGain();
-        o.type = type;
-        o.frequency.value = frequency;
-        
-        o.connect(g);
-        g.connect(context.destination);
-    }
-
-    generateSound()
+    
 
     const playNote = () => {
-        o.start(0);
-        o.stop(context.currentTime + 1)
-        g.gain.exponentialRampToValueAtTime(
-            0.0001, context.currentTime + decay
-        )
-        
-        generateSound();
+        const now = Tone.now();
+        synth.triggerAttackRelease(frequency, '8n', now)
     }
 
     const getStyle = ()=>{

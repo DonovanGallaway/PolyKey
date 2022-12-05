@@ -2,8 +2,10 @@
 
     import { each } from "svelte/internal";
     import Key from "./Key.svelte";
+    import * as Tone from 'tone'
 
     const fundFreq = 400
+
 
     const getMainPitches = (fundamental)=>{
         const pitches = []
@@ -35,15 +37,10 @@
 
     const noteMap = (freq) =>{
         return getMainPitches(freq).sort((a, b) => a-b).map((x) =>{
-            return {type: 'sine', frequency: x, decay: 1, fundamental: freq, harmonic: getHarmonic(x, freq)}
+            return { frequency: x, fundamental: freq, harmonic: getHarmonic(x, freq) }
         })
     }
 
-    let testButton = ''
-
-    const keyboardMap = [
-
-    ]
 
 </script>
 
@@ -82,7 +79,7 @@
 
 <!-- Please leave this in. I'm experimenting without these but don't want to redo math -->
 
-<!-- 
+
 <h2>Supertonic</h2>
 {#each noteMap(fundFreq*1.125) as noteProps}
     <Key props={noteProps} hFunc={'supertonic'}/>
@@ -98,4 +95,4 @@
 <h2>Superdominant</h2>
 {#each noteMap(fundFreq*1.625) as noteProps}
     <Key props={noteProps} hFunc={'superdominant'}/>
-{/each} -->
+{/each}

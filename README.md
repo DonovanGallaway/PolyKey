@@ -32,10 +32,11 @@ For me or anyone who wants to help with bugfixes/optimization
 
 - Activating a note repeatedly and quickly causes a sharp noise to occur
 - Adding keybindings to stuff to play the keyboard more like a piano
-- Moving that godawful styling case/elseif nightmare to some more readable separate helper function(s)
+- Moving that godawful styling case/elseif nightmare to some more readable separate helper function(s)/external css
 - Chord functionality
 - General code refactoring/cleanup/optimization
 - Ability to dynamically change the fundamental, as well as the wave form
 - More optimized octave ranges/arrangements
 - Show/hide chromatic functions as needed/desired
 - Ability to add octave ranges for any function as needed/desired
+- Add subdominant/superdominant styling
